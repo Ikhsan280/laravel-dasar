@@ -105,7 +105,8 @@ route::get('blog', function () {
     return view('blog', compact('posts'));
 });
 
-route::get('data', function () {
+route::get('data
+', function () {
     $pilih = [
         ['id' => 1,
             'name' => 'Ujang Ubed',
@@ -161,4 +162,24 @@ route::get('data', function () {
         ],
     ];
     return view('data', compact('pilih'));
+});
+
+Route::get('/testmodel', function () {
+    $query = $post = new App\Models\Biodatas;
+    $post->name = "burhan";
+    $post->bornDate = "2001-01-02";
+    $post->gender = "laki-laki";
+    $post->address = "yogya";
+    $post->religion = "kristen";
+    $post->age = "22";
+    $post->hobi = "Ngoding";
+
+    $post->save();
+    return $Biodatas;
+
+    return $query;
+});
+
+Route::get('/about', function () {
+    return view('about');
 });

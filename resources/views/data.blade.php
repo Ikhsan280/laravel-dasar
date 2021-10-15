@@ -17,7 +17,7 @@
         alamat : {{ $data['alamat'] }}<br>
         mata pelajaran :
         @foreach ($data['mapel'] as $mapel)
-            <li>{{ $mapel }}</li>
+            <li>{{  $mapel }}</li>
         @endforeach
         <hr>
     @endforeach
