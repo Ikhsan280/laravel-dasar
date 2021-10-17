@@ -164,22 +164,15 @@ route::get('data
     return view('data', compact('pilih'));
 });
 
-Route::get('/testmodel', function () {
-    $query = $post = new App\Models\Biodatas;
-    $post->name = "burhan";
-    $post->bornDate = "2001-01-02";
-    $post->gender = "laki-laki";
-    $post->address = "yogya";
-    $post->religion = "kristen";
-    $post->age = "22";
-    $post->hobi = "Ngoding";
-
-    $post->save();
-    return $Biodatas;
+Route::get('/cari', function () {
+    $query = App\Models\Biodatas::all();
+    return view('biodatas', compact('query'));
 
     return $query;
 });
 
-Route::get('/about', function () {
-    return view('about');
+Route::get('/test-post', function () {
+    $query = App\Models\Post::all();
+
+    return view('test-post', compact('query'));
 });
